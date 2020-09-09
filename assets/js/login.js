@@ -17,10 +17,48 @@ $(function() {
         //校验两次密码是否一致的规则
         repassword: function(value) {
             //通过属性选择器可以获取密码框的值
-            var pwd = $('.reg-box[name=password]').val()
+            var pwd = $('.reg-box [name=password]').val()
             if (pwd !== value) {
                 return '两次密码不一致'
             }
         }
+    })
+
+
+    //注册账号
+    $('.reg-form').on('submit', function(e) {
+        e.preventDefault()
+        $.ajax({
+            method: 'post',
+            url: 'http://ajax.frontend.itheima.net/api/reguser',
+            data: {
+                username: $('.reg-box [name=username]').val(),
+                password: $('.reg-box [name=password]').val()
+            },
+            success: function(res) {
+                if (res.status == 1) {
+                    return layer.msg(res.message);
+                }
+                layer.msg(res.message);
+                $('#link_login').click()
+            }
+        })
+    })
+
+    //登录账号
+    $('.login-form').submit(function(e) {
+        e.preventDefault()
+        $.ajax({
+            method: 'post',
+            url: 'http://ajax.frontend.itheima.net/api/login',
+            data: $(this).serialize(),
+            success: function(res) {
+                if (res.status == 1) {
+                    return layer.msg(res.message);
+                }
+                //location中的l要小写
+                location.href = '/index.html'
+            }
+        })
     })
 })
