@@ -56,7 +56,7 @@ $(function() {
                 if (res.status == 1) {
                     return layer.msg(res.message);
                 }
-                //location中的l要小写
+                var token = res.token
                 location.href = '/index.html'
             }
         })
