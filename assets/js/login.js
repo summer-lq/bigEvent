@@ -57,7 +57,7 @@ $(function() {
                     return layer.msg(res.message);
                 }
                 var token = res.token
-                localStorage.setItem('key', token)
+                localStorage.setItem('token', token)
                 location.href = '/index.html'
             }
         })
