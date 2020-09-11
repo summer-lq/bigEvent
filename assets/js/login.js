@@ -11,6 +11,7 @@ $(function() {
 
     //自定义校验规则
     var form = layui.form
+    var layer = layui.layer
     form.verify({
         //校验密码的规则
         password: [/^[\S]{6,12}$/, '密码必须6到12位，且不能出现空格'],
@@ -23,7 +24,6 @@ $(function() {
             }
         }
     })
-
 
     //注册账号
     $('.reg-form').on('submit', function(e) {
@@ -57,6 +57,7 @@ $(function() {
                     return layer.msg(res.message);
                 }
                 var token = res.token
+                localStorage.setItem('key', token)
                 location.href = '/index.html'
             }
         })
