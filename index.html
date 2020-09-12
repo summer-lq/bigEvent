@@ -22,7 +22,7 @@
                     <li class="layui-nav-item">
                         <a href="javascript:;" class="userinfo">
                             <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
-                            <span class="text-avatar">A</span> 个人中心
+                            <span class="text-avatar"></span> 个人中心
                         </a>
                         <dl class="layui-nav-child">
                             <dd><a href="">基本资料</a></dd>
@@ -30,7 +30,7 @@
                             <dd><a href="">重置密码</a></dd>
                         </dl>
                     </li>
-                    <li class="layui-nav-item"><a href="javascript:;"><span class="iconfont icon-tuichu"></span>退出</a></li>
+                    <li class="layui-nav-item"><a href="javascript:;" id="btnLogOut"><span class="iconfont icon-tuichu"></span>退出</a></li>
                 </ul>
             </div>
 
@@ -38,8 +38,8 @@
                 <div class="layui-side-scroll">
                     <div class="userinfo">
                         <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
-                        <span class="text-avatar">A</span>
-                        <span id="welcome">欢迎 ***</span>
+                        <span class="text-avatar"></span>
+                        <span id="welcome"></span>
                     </div>
                     <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                     <!-- lay-shrink属性是否收缩兄弟节点的子节点 -->
@@ -76,6 +76,9 @@
             </div>
         </div>
         <script src="/assets/lib/layui/layui.all.js"></script>
+        <script src="/assets/lib/jquery.js"></script>
+        <script src="/assets/js/baseApi.js"></script>
+        <script src="/assets/js/index.js"></script>
     </body>
 </body>
 
