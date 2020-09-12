@@ -26,6 +26,9 @@ $(function() {
                     return layui.layer.msg(res.message)
                 }
                 layui.layer.msg(res.message)
+
+                //将jQuery对象转换成dom对象,使用reset方法重置表单
+
                 $('.layui-form')[0].reset()
                 localStorage.removeItem('token')
                 top.window.location.href = '/login.html'
