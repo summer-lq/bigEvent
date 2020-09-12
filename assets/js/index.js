@@ -20,7 +20,7 @@ $(function () {
 })
 
 //获取用户的基本信息
-function getUserInfo() {
+function getUserInfo () {
     $.ajax({
         method: 'GET',
         url: '/my/userinfo',
@@ -46,7 +46,7 @@ function getUserInfo() {
     })
 }
 
-function getAvatar(user) {
+function getAvatar (user) {
 
     //1.渲染欢迎词
     var name = user.nickname || user.username
