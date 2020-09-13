@@ -90,7 +90,6 @@ $(function() {
         })
     })
 
-
     // 删除功能
     $('body').on('click', '#del-btn', function() {
         var id = $(this).attr('data-id')
