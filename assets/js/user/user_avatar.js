@@ -40,8 +40,6 @@ $(function() {
             .cropper(options) // 重新初始化裁剪区域
     })
 
-
-
     //确定按钮的事件
     $('#btnSure').click(function() {
         var dataURL = $image
@@ -53,11 +51,14 @@ $(function() {
         $.ajax({
             url: '/my/update/avatar',
             method: 'POST',
-            data: { avatar: dataURL },
+            data: {
+                avatar: dataURL
+            },
             success: function(res) {
                 if (res.status !== 0) {
                     return layui.layer.msg(res.message)
                 }
+                layui.layer.msg('头像更换成功！')
                 window.parent.getUserInfo()
             }
         })
