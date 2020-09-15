@@ -89,4 +89,30 @@ $(function() {
         })
     }
 
+
+
+    //删除功能
+    $('body').on('click', '.del-btn', function() {
+        var artid = $(this).attr('data-id')
+        var btnLen = $('.del-btn').length
+        layer.confirm('确认删除文章?', { icon: 3, title: '提示' }, function(index) {
+            $.ajax({
+                url: '/my/article/delete/' + artid,
+                method: 'GET',
+                success: function(res) {
+                    if (res.status !== 0) {
+                        return layer.msg(res.message)
+                    }
+                    layer.msg(res.message)
+                    if (btnLen === 1) {
+                        q.pagenum = q.pagenum === 1 ? 1 : q.pagenum - 1
+                    }
+                    initTable()
+                    layer.close(index)
+                }
+            })
+        })
+    })
+
+
 })
